@@ -1,0 +1,41 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- using setter injection
+	
+	<bean id="customer" class="Springcore_Assignment1.Customer">  
+		<property name="customerId" value="1"/>  
+		<property name="customerName" value="Nandini"/>  
+		<property name="customerContact" value="987654328"/> 
+		<property name="customerAddress" ref="address"/>  
+	</bean>  
+	
+	<bean id="address" class="Springcore_Assignment1.Address">  
+		<property name="street" value="9995562947"/> 
+		<property name="city" value="Karnataka"/>  
+		<property name="state" value="Bangalore"/> 
+		<property name="zip" value="560001"/>  
+		<property name="country" value="India"/>  
+	</bean>   -->
+	
+	<!-- using constructor injection -->
+	
+	<bean id="customerConstructor" class="Springcore_Assignment1.Customer">  
+		<constructor-arg index="0" value="1"/>
+		<constructor-arg index="1" value="Nandini"/>
+		<constructor-arg index="2" value="987654328"/>
+		<constructor-arg index="3" ref="addressConstructor"/>  
+	</bean>  
+	
+	<bean id="addressConstructor" class="Springcore_Assignment1.Address">  
+		<constructor-arg index="0" value="xyz"/>
+		<constructor-arg index="1" value="Karnataka"/>
+		<constructor-arg index="2" value="Bangalore"/>
+		<constructor-arg index="3" value="500049"/>
+		<constructor-arg index="4" value="India"/>  
+	</bean>  
+            
+           
+</beans>
